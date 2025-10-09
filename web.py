@@ -89,14 +89,14 @@ time.sleep(2)
 wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="B-4-0"]/div[1]/i'))).click()
 wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="layout-wrapper"]/div/div/app-messbookings/section/sbc-custom-tabs/section/div[4]/span'))).click()#tomorrow
 
-# try:
-#     label_nv = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[2]/td[1]')))
-#     if label_nv:
-#         wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[2]/td[5]/div/button'))).click() ## Button
+try:
+    label_nv = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[2]/td[1]')))
+    if label_nv:
+        wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[2]/td[5]/div/button'))).click() ## Button
         
-# except Exception as e:
-#     label_v =  wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[1]/td[1]')))
-#     if label_v:
-#         wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[1]/td[5]/div/button'))).click() ## Button
+except Exception as e:
+    label_v =  wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[1]/td[1]')))
+    if label_v:
+        wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[1]/td[5]/div/button'))).click() ## Button
 
     
