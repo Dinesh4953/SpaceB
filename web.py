@@ -83,20 +83,43 @@ except:
 
 
 wait.until(EC.presence_of_element_located((By.XPATH, '/html/body/app-root/app-login1/section/div[2]/div/form/button'))).click()
-wait.until(EC.invisibility_of_element_located((By.ID, "spinner")))
-wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="B-4"]/div[1]/span'))).click()
-time.sleep(2)
-wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="B-4-0"]/div[1]/i'))).click()
-wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="layout-wrapper"]/div/div/app-messbookings/section/sbc-custom-tabs/section/div[4]/span'))).click()#tomorrow
-
+print("Sign Clicked")
 try:
-    label_nv = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[2]/td[1]')))
-    if label_nv:
-        wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[2]/td[5]/div/button'))).click() ## Button
+    wait.until(EC.invisibility_of_element_located((By.ID, "spinner")))
+except:
+    print("Spinner not found or already gone.")
+try:
+    
+    wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="B-4"]/div[1]/span'))).click()
+    print("Mess manager Clicked")
+except:
+    print("Mess manager Not Clicked")
+time.sleep(2)
+try:
+    
+    wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="B-4-0"]/div[1]/i'))).click()
+    print("Booking Clicked")
+except :
+    print("Not Clicked Booking")
+try:
+    wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="layout-wrapper"]/div/div/app-messbookings/section/sbc-custom-tabs/section/div[4]/span'))).click()#tomorrow
+    print("Tomorrow Clicked")
+except:
+    print("Tomorrow Not Clicked")
+# try:
+#     label_nv = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[2]/td[1]')))
+#     if label_nv:
+#         wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[2]/td[5]/div/button'))).click() ## Button
+#         print("Non veg booked")
+#     else:
+#         print("Non veg booked not found")
         
-except Exception as e:
-    label_v =  wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[1]/td[1]')))
-    if label_v:
-        wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[1]/td[5]/div/button'))).click() ## Button
+# except Exception as e:
+#     label_v =  wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[1]/td[1]')))
+#     if label_v:
+#         wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[1]/td[5]/div/button'))).click() ## Button
+#         print("veg booked")
+#     else:
+#         print("veg not booked  ")
 
     
