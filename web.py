@@ -106,20 +106,20 @@ try:
     print("Tomorrow Clicked")
 except:
     print("Tomorrow Not Clicked")
-# try:
-#     label_nv = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[2]/td[1]')))
-#     if label_nv:
-#         wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[2]/td[5]/div/button'))).click() ## Button
-#         print("Non veg booked")
-#     else:
-#         print("Non veg booked not found")
+try:
+    label_nv = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[2]/td[1]')))
+    if label_nv:
+        wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[2]/td[5]/div/button'))).click() ## Button
+        print("Non veg booked")
+    else:
+        print("Non veg booked not found")
         
-# except Exception as e:
-#     label_v =  wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[1]/td[1]')))
-#     if label_v:
-#         wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[1]/td[5]/div/button'))).click() ## Button
-#         print("veg booked")
-#     else:
-#         print("veg not booked  ")
+except Exception as e:
+    label_v =  wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[1]/td[1]')))
+    if label_v:
+        wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="layout-wrapper"]/div/div/app-messbookings/section/app-transaction/div/table/tbody/tr[1]/td[5]/div/button'))).click() ## Button
+        print("veg booked")
+    else:
+        print("veg not booked  ")
 
     
