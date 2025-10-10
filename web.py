@@ -9,6 +9,10 @@ import time
 from webdriver_manager.chrome import ChromeDriverManager
 
 chrome_options = webdriver.ChromeOptions()
+import tempfile
+user_data_dir = tempfile.mkdtemp()
+chrome_options.add_argument(f"--user-data-dir={user_data_dir}")
+
 # chrome_options.binary_location = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
 chrome_options.add_experimental_option("detach", True)
 chrome_options.add_experimental_option("excludeSwitches", ["enable-logging"])
