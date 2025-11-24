@@ -32,7 +32,7 @@ url = "https://portal.spacebasic.com/login"
 service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(options=chrome_options, service=service)
 
-wait = WebDriverWait(driver, 20)
+wait = WebDriverWait(driver, 25)
 
 driver.get(url)
 password = "23102A010498@"
@@ -106,7 +106,7 @@ try:
 except :
     print("Not Clicked Booking")
 try:
-    wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="layout-wrapper"]/div/div/app-messbookings/section/sbc-custom-tabs/section/div[4]/span'))).click()#tomorrow
+    wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="layout-wrapper"]/div/div/app-messbookings/section/sbc-custom-tabs/section/div/button[3]'))).click()#tomorrow//
     print("Tomorrow Clicked")
 except:
     print("Tomorrow Not Clicked")
